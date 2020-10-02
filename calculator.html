@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta name="description" content="Financial Independance Early retirement">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta charset="utf-8">
+      <meta name="author" content="Adele Gikonyo">
+      <meta name="refresh" content="600">
+      <title>Financial Independance Retire Early</title>
+
+
+      <!--Style sheets-->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <title>Financial Calculator</title>
+
+        <link href="StyleSheet/sticky-footer-navbar.css" rel="stylesheet">
+        
+    </head>
+    <body>
+
+      <header>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+          <a class="navbar-brand" href="#">Financial Independance Retire Early</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="books.html">Books</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="investing.html">Investing</a>
+                </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="news.html">News</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="contact.html">Contact</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="calculator.html" tabindex="-1" aria-disabled="true">Calculator</a>
+              </li>
+            </ul>
+            <form class="form-inline mt-2 mt-md-0">
+              <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+          </div>
+        </nav>
+
+      </header>
+
+      <main role = "main">
+        <div class = "container">`
+          <h1 class="mt-5" id = "">Retirement Calculator</h1>
+          <p>Please input your annual income and expenses in the form below to see how well you are doing to reach retirement</p>
+          
+          <form action="">
+            <div>
+                <label for="">Annual Income</label>
+                <input id = "income" type="text">
+            </div>
+
+            <div>
+              <label for="">Annual Expenses</label>
+              <input id = "expenses" type="text">
+            </div>
+
+            <div>
+              <label for="">Current Savings</label>
+              <input id = "saved" type="text">
+            </div>
+
+          <div>
+            <label for="">Annual Savings</label>
+            <input id = "savings" type="text">
+        </div>
+    
+            <div>
+                <label for="">Retirement Pot: </label>
+                <input  type="text" id = "answer">
+            </div>
+
+            <div>
+              <label for="">Years to reach Financial Independance: </label>
+              <input  type="text" id = "years">
+          </div>
+
+          <div>
+            <label for="">Percentage Saved: </label>
+            <input  type="text" id = "perSaved">
+          </div>
+
+
+            <div>
+              <!--Here it would be nice to put a string which says either Congratulations Awesome Job! Your right on track! You need to pull up your socks! depending on how well they are doing to reach retirement. I also need to investigate the odd onClick behaviour where it perfomrs the function but then returns to the original page very quickly-->
+              <h2 id = "retirement">Congratulations!</h2>
+             
+            </div>
+    
+            
+        </form>
+        <button class = "btn btn-lg btn-primary" onclick="hello()">Calculate</button>
+
+        </div>
+        
+      
+
+      </main>
+
+      <footer class="footer mt-auto py-3">
+        <div class="container">
+          <span class="text-muted">Financial Independance Retire Early</span>
+          <p class = "text-muted">Copyright 2020</p>
+          
+          
+        </div>
+      </footer>
+      
+       
+
+        <script>
+          function hello() {
+              console.log("is this working?");
+              let income = 0;
+              let expenses = 0;
+              let saved = 0;
+   
+    
+    expenses = document.getElementById("expenses").value;
+    income = document.getElementById("income").value;
+    saved = document.getElementById("saved").value;
+
+    //Now we convert the inputs in the form to floats so that we can perform calculations on them. By defauls anything inputed into the form is a string
+    var result = parseFloat(expenses)*25;
+    var aSaving = parseFloat(income) - parseFloat(expenses);
+    var years = result/aSaving;
+    var percentageSaved = parseFloat(saved)/result;
+   
+    if(!isNaN(result))
+    {
+        //document.getElementById("retirement").innerHTML = result;
+        document.getElementById("answer").value = result;
+        document.getElementById("savings").value = aSaving;
+        document.getElementById("years").value = years;
+        document.getElementById("perSaved").value = percentageSaved;
+    }
+    console.log(result);
+    if (percentageSaved > 0.5)
+    {
+      document.getElementById("retirement").style.color = "blue ";
+      document.getElementById("retirement").innerHTML = "Congratulations you are doing an awesome job!"
+    }
+
+    else if (percentageSaved <= 0.5 && percentageSaved > 0.3)
+    {
+      document.getElementById("retirement").style.color = "green";
+      document.getElementById("retirement").innerHTML = "You are doing OK!";
+    }
+    else
+    {
+      document.getElementById("retirement").style.color = "red";
+      document.getElementById("retirement").innerHTML = "You need to pull up your socks!";
+    }
+          }
+   
+      </script>
+    </body>
+</html>

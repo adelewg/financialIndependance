@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en" class="h-100">
+  <head>
+    <meta name="description" content="Financial Independance Early retirement">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8">
+    <meta name="author" content="Adele Gikonyo">
+    <meta name="refresh" content="600">
+    <title>Financial Independance Retire Early</title>  
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    
+    <!-- Custom styles for the contact page -->
+    <link rel="stylesheet" href="StyleSheet/stylecontact.css">
+  </head>
+
+  <body class="d-flex flex-column h-100">
+    <header>
+  <!-- Fixed navbar -->
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="#">Financial Independance Retire Early</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="books.html">Books</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="investing.html">Investing</a>
+          </li>
+        <li class="nav-item">
+            <a class="nav-link" href="news.html">News</a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="contact.html">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="calculator.html" tabindex="-1" aria-disabled="true">Calculator</a>
+        </li>
+      </ul>
+      <form class="form-inline mt-2 mt-md-0">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+</header>
+
+<!-- Main page content -->
+
+<main role="main" class="flex-shrink-0">
+    
+    
+  <div class="container">
+    <h1 class="mt-5">Sign up for our newsletter</h1>
+    <p class="lead">Sign up for our newsletter and join thousands others who are taking control of their finances for a life filled with freedom and peace.</p>
+    <p>You can also use our <a href="calculator.html">retirement calculator</a> to track how well you are doing in terms of hitting your retirement goals.</p>
+  </div>
+
+  <div class = " container wrapper">
+    
+
+    <!-- I need to indicate that this form is a signup for the newsletter. Here I can code some alerts using javascript to do some simple form validation on the client side-->
+    <div id = "error_message">
+
+    </div>
+    <form action="" id = "myform" onsubmit = "return validate();">
+
+        <div class = "form-group">
+            <label for="">First Name</label>
+            <input type="text" id = "name" class = "form-control">
+        </div>  
+
+        <div class = "form-group">
+            <label for="">Last Name</label>
+            <input type="text" id  = "lname" class = "form-control">
+        </div> 
+
+        <div class = "form-group">
+            <label for="">Email</label>
+            <input type="email" id = "email"  class = "form-control">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+
+        <div class = "btn">
+          <input type="submit">
+        </div>
+
+           
+
+       
+    </form>
+
+  </div>
+
+ 
+
+ 
+</main>
+
+    
+
+
+
+<footer class="footer mt-auto py-3">
+  <div class="container">
+    <span class="text-muted">Financial Independance Retire Early</span>
+    <p class = "text-muted">Copyright 2020</p>
+    
+    
+  </div>
+</footer>
+
+<script>
+  //this code I took from codepen https://codepen.io/RajRajeshDn/pen/QRjwpG but I altered the code to account for the fact that my form is different in that it contains a last name and does not have an input for telephone number and text area. 
+
+function validate(){
+  var name = document.getElementById("name").value;
+  var lname = document.getElementById("lname").value;
+  var email = document.getElementById("email").value;
+  var error_message = document.getElementById("error_message");
+  
+  error_message.style.padding = "10px";
+  
+  var text;
+  if(name.length < 5){
+    text = "Please Enter valid Name";
+    error_message.innerHTML = text;
+    return false;
+  }
+
+  if(lname.length < 5){
+    text = "Please Enter valid Last Name";
+    error_message.innerHTML = text;
+    return false;
+  }
+  
+  if(email.indexOf("@") == -1 || email.length < 6){
+    text = "Please Enter valid Email";
+    error_message.innerHTML = text;
+    return false;
+  }
+  
+  alert("Form Submitted Successfully!");
+  return true;
+}
+</script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+      <script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+</html>

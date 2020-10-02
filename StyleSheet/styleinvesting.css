@@ -1,0 +1,89 @@
+/* General Styles */
+
+img {
+    max-width: 100%;
+    opacity: 0.9;
+  }
+
+/* Typography*/
+
+h2 {
+    font-size: 2rem;
+    opacity: 0.8;
+}
+/* hover effects on the links to make it clear to the user that they can interact with the links - I used code from this code pen https://codepen.io/HugoGiraudel/pen/kXorJJ */
+
+a {
+color: #3498db;
+position: relative; 
+text-decoration:none; 
+display: inline-block;
+}
+ 
+a::before,
+a::after {
+content: '';
+position: absolute; 
+top: 100%; 
+height: 1px; 
+width: 50%; 
+transform: scaleX(0);
+transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1); 
+background-color: currentcolor; 
+}
+
+/**
+* Position first pseudo-element on the left.
+*/
+a::before {
+left: 0;
+transform-origin: left;
+}
+
+/**
+* Position second pseudo-element on the right.
+*/
+a::after {
+right: 0;
+transform-origin: right;
+}
+
+/**
+* 1. Scaling up pseudo-elements on hover/active state.
+*/
+a:active::before,
+a:hover::before,
+a:active::after,
+a:hover::after {
+transform: scaleX(1); 
+}
+
+main > .container {
+    padding: 60px 15px 0;
+  }
+  
+  .footer {
+    background-color: #f5f5f5;
+  }
+  
+  .footer > .container {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+
+  .bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  }
+  
+
